@@ -5,22 +5,25 @@ public class App {
         System.out.println("The World");
 
         Scanner in = new Scanner(System.in);
-        System.out.print("How many random Passwords do you generate?");
+        System.out.print("How many random Passwords do you generate?  ");
         int total = in.nextInt();
 
-        System.out.print("How many chacacters long do you want to random generated password to be?");
+        System.out.print("How many chacacters long do you want to random generated password to be?  ");
+
+        int length = in.nextInt();
 
         String[] randomPasswords = new String[total];
 
-        int length = in.nextInt();
+        
         for (int i = 0; i < total; i++) {
             String randomPassword = "";
-            for (int j = 0; j < length; i++) {
+            for (int j = 0; j < length; j++) {
                 randomPassword += randomCharacter();
             }
             randomPasswords[i] = randomPassword;
         }
-
+        PrintPW(randomPasswords);
+        System.out.println("Bite the Dust");
     }
 
     public static void PrintPW(String[] arr) {
@@ -43,6 +46,5 @@ public class App {
             int ascii = rand + 61;
             return (char) (ascii);
         }
-        return 0;
     }
 }
